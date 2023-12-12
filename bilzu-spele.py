@@ -5,6 +5,8 @@ from tkinter import messagebox
 
 gameWindow=Tk()
 gameWindow.title("Vienādie attēli")
+#count=0
+#Answcount=0
 
 #izveido pogas - jābūt pāra skaitlim, piemēram, 10
 btn0=Button(width=4,height=3) #sāk no 0, jo sasaistās ar saraksta elementu indeksāciju
@@ -34,4 +36,14 @@ btn10.grid(row=3,column=1)
 btn11.grid(row=3,column=2)
 #saliek attēlus saraksta, katrs attēls 2 reizes
 
+bulterjers=ImageTk.PhotoImage(Image.open("bulterjers.png"))
+erdelterjers=ImageTk.PhotoImage(Image.open("erdelterjers.jpg"))
+foksterjers=ImageTk.PhotoImage(Image.open("foksterjers.jpg"))
+keribluterjers=ImageTk.PhotoImage(Image.open("keriblu-terjers.jpg"))
+kviesuterjers=ImageTk.PhotoImage(Image.open("kviesu-terjers.jpg"))
+
+#FONA ATTĒLS
+bgImg=Image.Tk.PhotoImage(Image.open("kauls.jpg").resize((200,200), Image.ANTIALIAS)) #attēlu saspiešanas metode
+
+#resize((x,y))
 gameWindow.mainloop()
