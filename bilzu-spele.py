@@ -2,6 +2,7 @@ from tkinter import* #importē tkinter bibliotēku
 from PIL import ImageTk, Image
 import random
 from tkinter import messagebox
+import time
 
 
 gameWindow=Tk()
@@ -15,25 +16,48 @@ answer_dict={} #kas ir piespiests, salīdzina ar attēliem no saraksta
 
 #FUNKCIJA
 def btnClick(btn,number):
+
     global count,correctAnswers,answers,answer_dict
+
     if btn["image"]=="pyimage6"and count<2: #pēc sistēmas nosauc šādi
         btn["image"]==imageList[number]
         count+=1 #viena rūtiņa atklāta
         answers.append(number) #pievieno pie atbildēm
         answer_dict[btn]=imageList[number]
+
     if len(answers)==2: #ja atvertas divas kartītes
+
         if imageList[answers[0]]==imageList[answers[1]]: #salīdzina attēlus, kas saglabats vārdnīcā ar attēlu sarakstā
             for key in answer_dict:
                 key["state"]=DISABLED
-        if correctAnswers==2:
-            messagebox.showinfo("Vienādi attēli", "Esi uzminējis!")
-    else:
-        messagebox.showinfo("Vienādi attēli", "Neuzminēji")
-        for key in answer_dict:
-            key["image"]="pyimage6"
-            count=0
-            answers=[]
-            answer_dict={}
+
+            answers = []
+            answer_dict = {}
+            count = 0
+            correctAnswers += 1
+
+        else:
+            Tk.update(btn)
+            time.sleep(1)
+            for key in answer_dict:
+                key["image"]="pyimage6"
+            count = 0
+            answers = []
+            answer_dict = {}
+
+    if correctAnswers==5:
+       messagebox.showinfo("Apsveicam!", "Spēle pabeigta") 
+                #correctAnswers=0
+                #answerCount+=1
+                #messagebox.showinfo("Vienādi attēli", "Esi uzminējis!")
+    #else:
+        #messagebox.showinfo("Vienādi attēli", "Neuzminēji")
+        #for key in answer_dict:
+            #key["image"]="pyimage6"
+    #count=0
+    #answers=[]
+    #answer_dict={}
+    
     return 0
 
 
