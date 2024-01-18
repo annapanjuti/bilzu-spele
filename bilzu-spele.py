@@ -12,17 +12,17 @@ gameWindow.resizable(1,1)
 
 
 #ATTĒLU IMPORTS
-bulterjers=ImageTk.PhotoImage(Image.open("bulterjers.png").resize((180,180)))
-erdelterjers=ImageTk.PhotoImage(Image.open("erdelterjers.jpg").resize((180,180)))
-foksterjers=ImageTk.PhotoImage(Image.open("foksterjers.jpg").resize((180,180)))
-keribluterjers=ImageTk.PhotoImage(Image.open("keriblu-terjers.jpg").resize((180,180)))
-kviesuterjers=ImageTk.PhotoImage(Image.open("kviesu-terjers.jpg").resize((180,180)))
+IMG0=ImageTk.PhotoImage(Image.open("bulterjers.png").resize((180,180)))
+IMG1=ImageTk.PhotoImage(Image.open("erdelterjers.jpg").resize((180,180)))
+IMG2=ImageTk.PhotoImage(Image.open("foksterjers.jpg").resize((180,180)))
+IMG3=ImageTk.PhotoImage(Image.open("keriblu-terjers.jpg").resize((180,180)))
+IMG4=ImageTk.PhotoImage(Image.open("kviesu-terjers.jpg").resize((180,180)))
 
 
 #ATTĒLU MASĪVS
-imageList=[bulterjers,bulterjers,erdelterjers,erdelterjers,foksterjers,foksterjers,
-keribluterjers,keribluterjers,kviesuterjers,kviesuterjers] #2 reizes katru, jo jābut pa pāriem
-myLabel=Label(image=erdelterjers)
+imageList=[IMG0,IMG0,IMG1,IMG1,IMG2,IMG2,
+IMG3,IMG3,IMG4,IMG4] #2 reizes katru, jo jābut pa pāriem
+myLabel=Label(image=IMG1)
 
 
 #FONA ATTĒLS
