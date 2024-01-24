@@ -68,27 +68,28 @@ answerCount=0
 #"ATSTATĪŠANAS" FUNKCIJA
 def reset():
     global count, correctAnswers, answers, answer_dict, answerCount
-    btn0.config(state=NORMAL)
-    btn1.config(state=NORMAL)
-    btn2.config(state=NORMAL)
-    btn3.config(state=NORMAL)
-    btn4.config(state=NORMAL)
-    btn5.config(state=NORMAL)
-    btn6.config(state=NORMAL)
-    btn7.config(state=NORMAL)
-    btn8.config(state=NORMAL)
-    btn9.config(state=NORMAL)
+    btn0.config(state=NORMAL, image=bgImg)
+    btn1.config(state=NORMAL, image=bgImg)
+    btn2.config(state=NORMAL, image=bgImg)
+    btn3.config(state=NORMAL, image=bgImg)
+    btn4.config(state=NORMAL, image=bgImg)
+    btn5.config(state=NORMAL, image=bgImg)
+    btn6.config(state=NORMAL, image=bgImg)
+    btn7.config(state=NORMAL, image=bgImg)
+    btn8.config(state=NORMAL, image=bgImg)
+    btn9.config(state=NORMAL, image=bgImg)
 
-    btn0["image"]="pyimage5"
-    btn1["image"]="pyimage5"
-    btn2["image"]="pyimage5"
-    btn3["image"]="pyimage5"
-    btn4["image"]="pyimage5"
-    btn5["image"]="pyimage5"
-    btn6["image"]="pyimage5"
-    btn7["image"]="pyimage5"
-    btn8["image"]="pyimage5"
-    btn9["image"]="pyimage5"
+    btn0.config(image=bgImg)
+    btn1.config(image=bgImg)
+    btn2.config(image=bgImg)
+    btn3.config(image=bgImg)
+    btn4.config(image=bgImg)
+    btn5.config(image=bgImg)
+    btn6.config(image=bgImg)
+    btn7.config(image=bgImg)
+    btn8.config(image=bgImg)
+    btn9.config(image=bgImg)
+
 
     random.shuffle(imageList)
 
@@ -113,7 +114,7 @@ def infoLogs():
 def btnClick(btn,number):
     global count,correctAnswers,answers,answer_dict, answerCount
     if btn["image"]=="pyimage5"and count<2: #pēc sistēmas nosauc šādi
-        btn["image"]==imageList[number]
+        btn["image"]=imageList[number]
         count+=1 #viena rūtiņa atklāta
         answers.append(number) #pievieno pie atbildēm
         answer_dict[btn]=imageList[number]
@@ -121,14 +122,10 @@ def btnClick(btn,number):
         if imageList[answers[0]]==imageList[answers[1]]: #salīdzina attēlus, kas saglabats vārdnīcā ar attēlu sarakstā
             for key in answer_dict:
                 key["state"]=DISABLED
-            correctAnswers=+2
+            correctAnswers+=2
             if correctAnswers==2:
                 correctAnswers=0
                 answerCount+=1
-            #answers = []
-            #answer_dict = {}
-            #count = 0
-            #correctAnswers += 1
         else:
             Tk.update(btn)
             time.sleep(1)
@@ -140,19 +137,6 @@ def btnClick(btn,number):
     if answerCount==5:
         messagebox.showinfo("Super, Tu uzvarēji!")
         reset()
-
-                #correctAnswers=0
-                #answerCount+=1
-                #messagebox.showinfo("Vienādi attēli", "Esi uzminējis!")
-    #else:
-        #messagebox.showinfo("Vienādi attēli", "Neuzminēji")
-        #for key in answer_dict:
-            #key["image"]="pyimage6"
-    #count=0
-    #answers=[]
-    #answer_dict={}
-    
-   # return 0
 
 
 galvenaIzvelne=Menu(gameWindow)
