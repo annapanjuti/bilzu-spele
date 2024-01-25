@@ -79,16 +79,16 @@ def reset():
     btn8.config(state=NORMAL, image=bgImg)
     btn9.config(state=NORMAL, image=bgImg)
 
-    btn0.config(image=bgImg)
-    btn1.config(image=bgImg)
-    btn2.config(image=bgImg)
-    btn3.config(image=bgImg)
-    btn4.config(image=bgImg)
-    btn5.config(image=bgImg)
-    btn6.config(image=bgImg)
-    btn7.config(image=bgImg)
-    btn8.config(image=bgImg)
-    btn9.config(image=bgImg)
+    btn0.config(image="pyimage6")
+    btn1.config(image="pyimage6")
+    btn2.config(image="pyimage6")
+    btn3.config(image="pyimage6")
+    btn4.config(image="pyimage6")
+    btn5.config(image="pyimage6")
+    btn6.config(image="pyimage6")
+    btn7.config(image="pyimage6")
+    btn8.config(image="pyimage6")
+    btn9.config(image="pyimage6")
 
 
     random.shuffle(imageList)
@@ -113,7 +113,7 @@ def infoLogs():
 #FUNKCIJA
 def btnClick(btn,number):
     global count,correctAnswers,answers,answer_dict, answerCount
-    if btn["image"]=="pyimage5"and count<2: #pēc sistēmas nosauc šādi
+    if btn["image"]=="pyimage6"and count<2: #pēc sistēmas nosauc šādi
         btn["image"]=imageList[number]
         count+=1 #viena rūtiņa atklāta
         answers.append(number) #pievieno pie atbildēm
@@ -130,7 +130,7 @@ def btnClick(btn,number):
             Tk.update(btn)
             time.sleep(1)
             for key in answer_dict:
-                key["image"]="pyimage5"
+                key["image"]="pyimage6"
         count = 0
         answers = []
         answer_dict = {}
