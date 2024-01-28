@@ -104,9 +104,17 @@ def reset():
 def infoLogs():
         gameWindow=Toplevel()
         gameWindow.title('Par programmu')
-        gameWindow.geometry("500x300")
-        apraksts=Label(gameWindow,text="Atrodi visas vienādās kartītes!")
-        apraksts.grid(row=0,column=0)
+        gameWindow.geometry("570x300")
+        apraksts0=Label(gameWindow,text="Spēlētājs uzklikšķina uz kādu no apgrieztajiem attēliem un uzreiz pēc tam uz vēl vienu.")
+        apraksts1=Label(gameWindow, text="Ja attēli ir vienādi - attēlu pāris ir atrasts un paliek redzams, ja tie nav - jāturpina meklēt un attēli aizgriežas.")
+        apraksts2=Label(gameWindow, text="Spēles gaitā jācenšas iegaumēt, kurās vietās atrodas attēli, lai pēc iespējas ātrāk atrastu visus attēlu pārus.")
+        apraksts3=Label(gameWindow, text="Kad visi attēlu pāri ir atrasti, spēle ir beigusies.")
+        apraksts4=Label(gameWindow, text="Atrodi visas vienādās kartītes, veiksmi!")
+        apraksts0.grid(row=0,column=0)
+        apraksts1.grid(row=1,column=0)
+        apraksts2.grid(row=2,column=0)
+        apraksts3.grid(row=3,column=0)
+        apraksts4.grid(row=4,column=0)
         return 0
 
 
