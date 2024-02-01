@@ -143,7 +143,7 @@ def btnClick(btn,number):
         answers = []
         answer_dict = {}
     if answerCount==5:
-        messagebox.showinfo("Super!")
+        messagebox.showinfo("Uzvara!")
         reset()
 
 
